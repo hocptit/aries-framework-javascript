@@ -113,7 +113,7 @@ export class Faber extends BaseAgent {
     const connectionRecord = await getConnectionRecord(this.outOfBandId)
 
     try {
-      await this.agent.connections.returnWhenIsConnected(connectionRecord.id)
+      await this.agent.connections.returnWhenIsConnected(connectionRecord.id, {timeoutMs: 200 * 1000})
     } catch (e) {
       console.log(redText(`\nTimeout of 20 seconds reached.. Returning to home screen.\n`))
       return

@@ -11,4 +11,8 @@ COPY --from=indy-base /usr/lib/libindy.a /usr/lib/libindy.a
 COPY --from=indy-base /usr/lib/libindy.so /usr/lib/libindy.so
 
 RUN apt-get install -y curl python3 build-essential ca-certificates && \
-  apt-get install nodejs -y
+  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && \
+  export NVM_DIR="$HOME/.nvm" && \
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
+  nvm install v16 && \
+  npm install yarn -g

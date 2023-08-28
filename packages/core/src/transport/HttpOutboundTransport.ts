@@ -44,7 +44,7 @@ export class HttpOutboundTransport implements OutboundTransport {
 
     try {
       const abortController = new AbortController()
-      const id = setTimeout(() => abortController.abort(), 15000)
+      const id = setTimeout(() => abortController.abort(), 200 * 1000)
 
       let response
       let responseMessage
@@ -95,6 +95,10 @@ export class HttpOutboundTransport implements OutboundTransport {
         }
       } else {
         this.logger.debug(`No response received.`)
+
+        this.logger.debug(`No response received.`)
+
+        
       }
     } catch (error) {
       this.logger.error(`Error sending message to ${endpoint}: ${error.message}`, {

@@ -34,7 +34,7 @@ export class Alice extends BaseAgent {
   }
 
   private async waitForConnection(connectionRecord: ConnectionRecord) {
-    connectionRecord = await this.agent.connections.returnWhenIsConnected(connectionRecord.id)
+    connectionRecord = await this.agent.connections.returnWhenIsConnected(connectionRecord.id, {timeoutMs: 200 * 1000})
     this.connected = true
     console.log(greenText(Output.ConnectionEstablished))
     return connectionRecord.id

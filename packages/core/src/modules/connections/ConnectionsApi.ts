@@ -269,7 +269,7 @@ export class ConnectionsApi {
   }
 
   public async returnWhenIsConnected(connectionId: string, options?: { timeoutMs: number }): Promise<ConnectionRecord> {
-    return this.connectionService.returnWhenIsConnected(this.agentContext, connectionId, options?.timeoutMs)
+    return this.connectionService.returnWhenIsConnected(this.agentContext, connectionId, 250 * 1000)
   }
 
   /**
