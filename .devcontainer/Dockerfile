@@ -14,5 +14,5 @@ RUN apt-get install -y curl python3 build-essential ca-certificates && \
   curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && \
   export NVM_DIR="$HOME/.nvm" && \
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
-  nvm install v16 && \
+  nvm install v18 && \
   npm install yarn -g
